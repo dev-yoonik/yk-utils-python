@@ -1,0 +1,17 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## unreleased
+
+## v0.1.0
+
+### Added
+
+- Function to read image and return it as base64 string.
+- Function to read configuration files.
+- Helpers for APIs: keys, urls and requests handling.
+- Wrapper for face authentication API (YooniK Web).
