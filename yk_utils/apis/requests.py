@@ -4,7 +4,7 @@ import requests
 from yk_utils.apis import BaseUrl, Key, YoonikApiException
 
 
-def request(method, url, data=None, json=None, headers=None, params=None):
+def request(method: str, url: str, data=None, json: dict = None, headers: dict = None, params=None):
     # pylint: disable=too-many-arguments
     """ Universal interface for request."""
     url = BaseUrl.get() + url

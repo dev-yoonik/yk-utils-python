@@ -20,10 +20,14 @@ class FaceAuthentication:
         self.message = None
 
     @staticmethod
-    def allowed_base64_image(image_str):
-        if not image_str.startswith('data:image/'):
+    def allowed_base64_image(image: str) -> bool:
+        """Check if base64 image has an allowed format.
+        :param image:
+        :return:
+        """
+        if not image.startswith('data:image/'):
             return False
-        return image_str[11:14] in {'png', 'jpg', 'jpeg', 'gif'}
+        return image[11:14] in {'png', 'jpg', 'jpeg', 'gif'}
 
     @staticmethod
     def parse_response_error(html_text: str, extra_response_codes: dict = None) -> str:
