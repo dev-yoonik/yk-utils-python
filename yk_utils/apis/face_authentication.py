@@ -39,8 +39,8 @@ class FaceAuthentication:
         :return:
             Parsed error message.
         """
-        message = ''
         html = BeautifulSoup(markup=html_text, features="html.parser")
+        message = html.text
         if html.p:
             inner_html = BeautifulSoup(markup=html.p.text, features="html.parser")
             message = inner_html.text if inner_html.p is None else inner_html.p.text
