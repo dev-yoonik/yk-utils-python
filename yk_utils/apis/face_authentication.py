@@ -97,9 +97,10 @@ class FaceAuthentication:
             yoonik_request_data = {
                 'user_id': user_id,
                 'user_photo': user_photo.split('base64,')[1],
-                'user_attributes': user_attributes,
                 'create_if_new': create_if_new
             }
+            if user_attributes:
+                yoonik_request_data['user_attributes'] = user_attributes
             response = requests.post(
                 self.api_url,
                 headers={'x-api-key': self.api_key},
