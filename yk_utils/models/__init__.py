@@ -1,2 +1,3 @@
+""" Models Module Init """
 from . import deserialization
-from .base_model_ import Model
+from .base_model import Model

@@ -16,7 +16,7 @@ setup(
     packages=[
         "yk_utils",
         "yk_utils.apis",
-        "yk_utils.image",
+        "yk_utils.images",
         "yk_utils.files",
         "yk_utils.models"
     ],
