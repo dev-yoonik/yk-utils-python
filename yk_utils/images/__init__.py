@@ -1,1 +1,1 @@
-from .image_parser import parse_image
+from . import image_operations

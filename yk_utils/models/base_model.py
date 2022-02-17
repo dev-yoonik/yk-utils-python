@@ -6,7 +6,7 @@ import typing
 import six
 from datetime import datetime
 from yk_utils_private.models.deserialization import deserialize_dbmodel, deserialize_model
-from yk_utils.objects.objects_operation import datetime2str, convert_to_string
+from yk_utils.objects.object_operations import datetime2str, convert_to_string
 
 GenericType = typing.TypeVar('T')
 

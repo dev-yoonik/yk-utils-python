@@ -1,2 +1,2 @@
 """ Objects Module Init """
-from . import objects_operation
+from . import object_operations
