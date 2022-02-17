@@ -1,4 +1,4 @@
-"""Handling of configuration files"""
+""" File handling """
 import json
 
 

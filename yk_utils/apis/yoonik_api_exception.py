@@ -6,7 +6,7 @@ class YoonikApiException(Exception):
     """Custom Exception for the YooniK APIs."""
     def __init__(self, status_code: int, message: str):
         """ Class initializer.
-        :param status_code: HTTP responde status code.
+        :param status_code: HTTP response status code.
         :param message: Error message.
         """
         super(YoonikApiException, self).__init__()
