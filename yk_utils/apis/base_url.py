@@ -19,7 +19,7 @@ class BaseUrl:
     def get(cls) -> str:
         """
         Gets the stored base URL
-        :return:
+        :return: stored base URL
         """
         if not hasattr(cls, 'base_url'):
             cls.base_url = None

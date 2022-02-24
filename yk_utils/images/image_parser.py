@@ -4,7 +4,7 @@ import os
 import base64
 
 
-def parse_image(image: str) -> str:
+def parse_image(image) -> str:
     """Check whether the image is a string or a file path or a file-like object.
     :param image:
         A base64 string or a file path or a file-like object representing an image.
