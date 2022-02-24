@@ -109,7 +109,8 @@ class FaceAuthentication:
             if response.ok:
                 result = json.loads(response.text)
                 self.status = result['status']
-                self.message_class = 'text-success' if self.status == 'SUCCESS' or self.status == 'NEW_USER' else 'text-danger'
+                self.message_class = 'text-success' if self.status in ('SUCCESS', 'NEW_USER') \
+                    else 'text-danger'
                 self.message = self.parse_response_status(self.status)
             else:
                 self.message = f'Ups! {self.parse_response_error(response.text)}'

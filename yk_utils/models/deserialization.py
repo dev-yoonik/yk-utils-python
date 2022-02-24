@@ -1,7 +1,8 @@
-import six
-import sys
+""" Deserialization Module """
 import typing
 import datetime
+import sys
+import six
 
 
 def _deserialize(data, klass, from_db: bool = False):

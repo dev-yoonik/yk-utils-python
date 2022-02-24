@@ -9,11 +9,11 @@ class YoonikApiException(Exception):
         :param status_code: HTTP response status code.
         :param message: Error message.
         """
-        super(YoonikApiException, self).__init__()
+        super().__init__()
         self.status_code = status_code
         self.message = message
 
     def __str__(self):
-        return ('Error when calling YooniK API:\n'
-                '\tstatus_code: {}\n'
-                '\tmessage: {}\n').format(self.status_code, self.message)
+        return 'Error when calling YooniK API:\n' + \
+            f'\tstatus_code: {self.status_code}\n' + \
+            f'\tmessage: {self.message}\n'

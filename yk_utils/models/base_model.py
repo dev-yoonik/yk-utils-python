@@ -3,9 +3,9 @@
 import json
 import pprint
 import typing
-import six
 from datetime import datetime
-from yk_utils_private.models.deserialization import deserialize_dbmodel, deserialize_model
+import six
+from yk_utils.models.deserialization import deserialize_dbmodel, deserialize_model
 from yk_utils.objects.object_operations import datetime2str, convert_to_string
 
 GenericType = typing.TypeVar('T')
@@ -39,7 +39,8 @@ class Model:
     @classmethod
     def from_db(cls, mongo_object) -> GenericType:
         """Returns the mongodb object as a model"""
-        return deserialize_dbmodel(json.loads(json.dumps(mongo_object, default=convert_to_string)), cls)
+        return deserialize_dbmodel(json.loads(
+            json.dumps(mongo_object, default=convert_to_string)), cls)
 
     def to_db(self):
         """Returns the model properties as a dict

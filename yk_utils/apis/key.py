@@ -3,7 +3,7 @@
 
 
 class Key:
-    """Manage Subscription Key."""
+    """Manage YooniK API Subscription Key."""
     @classmethod
     def set(cls, key: str):
         """Set the Subscription Key.

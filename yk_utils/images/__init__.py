@@ -1,2 +1,2 @@
 """ Image Module Init """
-from . import image_operations
+from .image_parser import parse_image

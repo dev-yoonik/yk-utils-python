@@ -1,2 +1,2 @@
 """ Files Module Init """
-from . import file_operations
+from .file_operations import read_json_from_file, write_json_to_file
