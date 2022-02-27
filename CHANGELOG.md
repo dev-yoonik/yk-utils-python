@@ -8,10 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## v1.0.0
 
 ### Added
-- Encoding specification for write-read json files.
+
+- Objects module.
 
 ### Changed
-- Image module naming to plural.
+
+- Image module name.
+- Read/Write JSON files functions.
+- Models deserialization functions.
 
 ## v0.2.0
 
