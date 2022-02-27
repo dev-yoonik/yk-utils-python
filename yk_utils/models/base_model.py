@@ -98,7 +98,7 @@ class Model:
                     if hasattr(item[1], "to_dict") else item,
                     value.items()
                 ))
-            else:
+            elif value:
                 result[attr_name] = value
 
         return result
