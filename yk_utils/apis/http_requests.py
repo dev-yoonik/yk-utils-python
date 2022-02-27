@@ -32,5 +32,4 @@ def request(method: str, url: str, data=None, json: dict = None, headers: dict =
 
     if json_content_type in response.headers['Content-Type']:
         return response.json() if response.text else {}
-    else:
-        return response.text
+    return response.text
