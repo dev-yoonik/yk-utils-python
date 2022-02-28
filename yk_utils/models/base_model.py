@@ -98,7 +98,7 @@ class Model:
                     if hasattr(item[1], "to_dict") else item,
                     value.items()
                 ))
-            elif value:
+            elif value is not None:
                 result[attr_name] = value
 
         return result
