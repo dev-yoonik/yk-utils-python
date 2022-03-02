@@ -2,22 +2,8 @@
 import json
 import requests
 from bs4 import BeautifulSoup
-
-
-class FaceAuthenticationResult:
-    """This class stores the face authentication results."""
-    def __init__(self, status: str = None, message_class: str = None, message: str = None):
-        """Class initializer.
-        :param status:
-            Authentication status.
-        :param message_class:
-            Message class (for UI purposes).
-        :param message:
-            Result message.
-        """
-        self.status = status
-        self.message_class = message_class
-        self.message = message
+from yk_utils.apis import ApiResult
+from yk_utils.images import allowed_base64_image
 
 
 class FaceAuthentication:
@@ -32,16 +18,6 @@ class FaceAuthentication:
         """
         self.api_url = api_url
         self.api_key = api_key
-
-    @staticmethod
-    def allowed_base64_image(image: str) -> bool:
-        """Check if base64 image has an allowed format.
-        :param image:
-        :return:
-        """
-        if not image.startswith('data:image/'):
-            return False
-        return image[11:14] in {'png', 'jpg', 'jpeg', 'gif'}
 
     @staticmethod
     def parse_response_error(html_text: str, extra_response_codes: dict = None) -> str:
@@ -95,7 +71,7 @@ class FaceAuthentication:
         return message
 
     def request_face_authentication(self, user_id: str, user_photo: str, user_attributes: dict = None,
-                                    create_if_new: bool = True) -> FaceAuthenticationResult:
+                                    create_if_new: bool = True) -> ApiResult:
         """Perform a face authentication request to YooniK API.
         :param user_id:
             User ID to be authenticated.
@@ -108,10 +84,10 @@ class FaceAuthentication:
         :return:
             Face authentication result object.
         """
-        face_authentication_result = FaceAuthenticationResult(status='FAILED', message_class='text-danger',
-                                                              message='Face authentication failed')
+        face_authentication_result = ApiResult(status='FAILED', message_class='text-danger',
+                                               message='Face authentication failed')
 
-        if self.allowed_base64_image(user_photo):
+        if allowed_base64_image(user_photo):
             yoonik_request_data = {
                 'user_id': user_id,
                 'user_photo': user_photo.split('base64,')[1],
@@ -132,6 +108,8 @@ class FaceAuthentication:
                 face_authentication_result.message = self.parse_response_status(face_authentication_result.status)
             else:
                 face_authentication_result.message = f'Ups! {self.parse_response_error(response.text)}'
+
+        return face_authentication_result
 
     def request_account_deletion(self, user_id: str) -> bool:
         """Delete a user from YooniK API.
