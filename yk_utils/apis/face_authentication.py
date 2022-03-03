@@ -41,6 +41,8 @@ class FaceAuthentication:
             message = "The image has more than one person."
         elif "quality_failed" in message:
             message = "The provided image does not have enough quality."
+        elif "mobile_app_no_response" in message:
+            message = "Could not receive result from mobile app."
         elif extra_response_codes:
             for code in extra_response_codes:
                 if code in message:
