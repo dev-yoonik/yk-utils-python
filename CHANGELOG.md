@@ -16,12 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Objects module.
+- New class to store API result data (instead of proprieties in FaceAuthentication class).
 
 ### Changed
 
 - Image module name.
 - Read/Write JSON files functions.
 - Models deserialization functions.
+- FaceAuthentication class to return an ApiResult object on request_face_authentication() method.
+- Moved allowed_base64_image() function from FaceAuthentication class to images module.
 
 ## v0.2.0
 
