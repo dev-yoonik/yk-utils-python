@@ -15,6 +15,7 @@ def parse_image(image) -> str:
     if hasattr(image, 'read'):  # When image is a file-like object.
         data = image.read()
     elif os.path.isfile(image):  # When image is a file path.
-        data = open(image, 'rb').read()
+        with open(image, 'rb') as file:
+            data = file.read()
 
     return base64.b64encode(data).decode('utf-8') if data else image

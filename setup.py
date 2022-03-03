@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_utils",
-    version="0.2.0",
+    version="1.0.0",
     description="YooniK utils package for python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -16,14 +16,16 @@ setup(
     packages=[
         "yk_utils",
         "yk_utils.apis",
-        "yk_utils.image",
         "yk_utils.files",
-        "yk_utils.models"
+        "yk_utils.images",
+        "yk_utils.models",
+        "yk_utils.objects"
     ],
     install_requires=[
         'requests',
         'beautifulsoup4',
         'six',
+        'python-dateutil'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
