@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--   URL checks in Objects Module
+-   Web Module with URL operations
 
 ## v1.1.1
 

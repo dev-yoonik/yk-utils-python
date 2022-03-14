@@ -1,7 +1,9 @@
 """HTTP requests module.
 """
 import requests
-from yk_utils.apis import BaseUrl, Key, YoonikApiException
+from .key import Key
+from .base_url import BaseUrl
+from .yoonik_api_exception import YoonikApiException
 
 
 def request(method: str, url: str, data=None, json: dict = None, headers: dict = None, params=None):

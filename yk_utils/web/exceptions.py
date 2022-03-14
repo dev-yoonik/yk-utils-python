@@ -1,4 +1,4 @@
-""" Objects Module Custom Exceptions """
+""" Web Custom Exceptions Module """
 
 
 class BadUrl(Exception):

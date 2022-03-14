@@ -2,8 +2,8 @@
 import json
 import requests
 from bs4 import BeautifulSoup
-from yk_utils.apis import ApiResult
 from yk_utils.images import allowed_base64_image
+from .api_result import ApiResult
 
 
 class FaceAuthentication:
@@ -72,7 +72,10 @@ class FaceAuthentication:
             message = "Face authentication failed"
         return message
 
-    def request_face_authentication(self, user_id: str, user_photo: str, user_attributes: dict = None,
+    def request_face_authentication(self,
+                                    user_id: str,
+                                    user_photo: str,
+                                    user_attributes: dict = None,
                                     create_if_new: bool = True) -> ApiResult:
         """Perform a face authentication request to YooniK API.
         :param user_id:
@@ -107,9 +110,11 @@ class FaceAuthentication:
                 face_authentication_result.status = result['status']
                 face_authentication_result.message_class = 'text-success' if \
                     face_authentication_result.status in ('SUCCESS', 'NEW_USER') else 'text-danger'
-                face_authentication_result.message = self.parse_response_status(face_authentication_result.status)
+                face_authentication_result.message = \
+                    self.parse_response_status(face_authentication_result.status)
             else:
-                face_authentication_result.message = f'Ups! {self.parse_response_error(response.text)}'
+                face_authentication_result.message = \
+                    f'Ups! {self.parse_response_error(response.text)}'
 
         return face_authentication_result
 

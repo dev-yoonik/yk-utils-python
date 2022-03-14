@@ -19,7 +19,8 @@ setup(
         "yk_utils.files",
         "yk_utils.images",
         "yk_utils.models",
-        "yk_utils.objects"
+        "yk_utils.objects",
+        "yk_utils.web"
     ],
     install_requires=[
         'requests',
