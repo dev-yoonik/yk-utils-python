@@ -13,7 +13,7 @@ def convert_to_string(input_value):
 def datetime2str(value: datetime.datetime):
     """
     :param value:
-        datetie instance object.
+        datetime instance object.
     :return:
         str with the conversion
     """

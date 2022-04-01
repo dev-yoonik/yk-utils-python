@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_utils",
-    version="1.1.1",
+    version="1.1.2",
     description="YooniK utils package for python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -19,7 +19,8 @@ setup(
         "yk_utils.files",
         "yk_utils.images",
         "yk_utils.models",
-        "yk_utils.objects"
+        "yk_utils.objects",
+        "yk_utils.web"
     ],
     install_requires=[
         'requests',
