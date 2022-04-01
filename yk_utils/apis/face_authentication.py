@@ -49,8 +49,7 @@ class FaceAuthentication:
                     message = extra_response_codes[code]
                     break
         else:
-            message = "An error occurred. Please contact your systems administrator."
-            print(f"ERROR: {html.text}")
+            message = f"An error occurred: {message}"
         return message
 
     @staticmethod
