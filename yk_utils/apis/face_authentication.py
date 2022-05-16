@@ -39,6 +39,10 @@ class FaceAuthentication:
             message = "Could not find a face in the image."
         elif "multiple_faces" in message:
             message = "The image has more than one person."
+        elif "brightness_failed" in message:
+            message = "Please take a selfie in an environment with good illumination."
+        elif "light_uniformity_failed" in message:
+            message = "Try to avoid having parts of your face shadowed."
         elif "quality_failed" in message:
             message = "The provided image does not have enough quality."
         elif "mobile_app_no_response" in message:
