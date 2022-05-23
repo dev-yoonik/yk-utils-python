@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_utils",
-    version="1.1.3",
+    version="1.1.4-dev0",
     description="YooniK utils package for python.",
     long_description=long_description,
     long_description_content_type="text/markdown",

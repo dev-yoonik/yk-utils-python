@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- BaseEnum class
 - Error model for API responses.
 
 ## v1.0.0
