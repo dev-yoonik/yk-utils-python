@@ -45,6 +45,7 @@ async def request_async(
         data=None,
         json: dict = None,
         headers: dict = None,
+        timeout: int = 10,
         params=None):
     # pylint: disable=too-many-arguments
     """ Universal interface for request."""
@@ -58,7 +59,7 @@ async def request_async(
     if api_key:
         headers['x-api-key'] = api_key
 
-    async with httpx.AsyncClient(timeout=30) as client:
+    async with httpx.AsyncClient(timeout=timeout) as client:
         response = await client.request(
             method=method,
             url=url,
