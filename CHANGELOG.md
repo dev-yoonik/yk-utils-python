@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+## v1.3.1
+
 ### Fixed
 
 - Requests wrapper when response is 204 No Content.
