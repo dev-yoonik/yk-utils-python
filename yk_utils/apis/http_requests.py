@@ -33,8 +33,9 @@ def request(method: str, url: str, data=None, json: dict = None, headers: dict =
 
     if not response.ok:
         raise YoonikApiException(response.status_code, response.text)
-
-    if json_content_type in response.headers['Content-Type']:
+    elif response.status_code == 204:
+        return
+    elif json_content_type in response.headers['Content-Type']:
         return response.json() if response.text else {}
     return response.text
 
@@ -71,7 +72,8 @@ async def request_async(
 
     if not response.is_success:
         raise YoonikApiException(response.status_code, response.text)
-
-    if json_content_type in response.headers['Content-Type']:
+    elif response.status_code == 204:
+        return
+    elif json_content_type in response.headers['Content-Type']:
         return response.json() if response.text else {}
     return response.text
