@@ -21,19 +21,23 @@ class FaceAuthentication:
 
     @staticmethod
     def parse_response_error(html_text: str, extra_response_codes: dict = None) -> str:
-        """Parse HTML error response
+        """Parse error response
         :param html_text:
-            HTML error message.
+            Error message.
         :param extra_response_codes:
             Dictionary with additional response codes and description pairs, to search on html_text.
+
         :return:
             Parsed error message.
         """
-        html = BeautifulSoup(markup=html_text, features="html.parser")
-        message = html.text
-        if html.p:
-            inner_html = BeautifulSoup(markup=html.p.text, features="html.parser")
-            message = inner_html.text if inner_html.p is None else inner_html.p.text
+        try:
+            message = json.loads(html_text)['message']
+        except Exception:
+            html = BeautifulSoup(markup=html_text, features="html.parser")
+            message = html.text
+            if html.p:
+                inner_html = BeautifulSoup(markup=html.p.text, features="html.parser")
+                message = inner_html.text if inner_html.p is None else inner_html.p.text
 
         if "face_not_found" in message:
             message = "Could not find a face in the image."
