@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+## v1.3.3
+
+### Changed
+
+- Youverse rebranding.
+
+## v1.3.2
+
+### Added
+
+- Parse error messages in json format in FaceAuthentication class.
+
 ## v1.3.1
 
 ### Fixed

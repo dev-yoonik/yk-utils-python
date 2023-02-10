@@ -3,7 +3,7 @@
 
 
 class YoonikApiException(Exception):
-    """Custom Exception for the YooniK APIs."""
+    """Custom Exception for Youverse APIs."""
     def __init__(self, status_code: int, message: str):
         """ Class initializer.
         :param status_code: HTTP response status code.
@@ -14,6 +14,6 @@ class YoonikApiException(Exception):
         self.message = message
 
     def __str__(self):
-        return 'Error when calling YooniK API:\n' + \
+        return 'Error when calling Youverse API:\n' + \
             f'\tstatus_code: {self.status_code}\n' + \
             f'\tmessage: {self.message}\n'
