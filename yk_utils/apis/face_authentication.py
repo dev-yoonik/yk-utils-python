@@ -7,14 +7,14 @@ from .api_result import ApiResult
 
 
 class FaceAuthentication:
-    """This class is a wrapper for the YooniK Web Product, an API for face authentication.
+    """This class is a wrapper for the YouAuth product, an API for face authentication.
     """
     def __init__(self, api_url: str, api_key: str):
         """Class initializer
         :param api_url:
-            YooniK Authentication API URL.
+            YouAuth API URL.
         :param api_key:
-            YooniK Authentication API Key.
+            YouAuth API Key.
         """
         self.api_url = api_url
         self.api_key = api_key
@@ -84,7 +84,7 @@ class FaceAuthentication:
                                     user_photo: str,
                                     user_attributes: dict = None,
                                     create_if_new: bool = True) -> ApiResult:
-        """Perform a face authentication request to YooniK API.
+        """Perform a face authentication request to YouAuth API.
         :param user_id:
             User ID to be authenticated.
         :param user_photo:
@@ -126,7 +126,7 @@ class FaceAuthentication:
         return face_authentication_result
 
     def request_account_deletion(self, user_id: str) -> bool:
-        """Delete a user from YooniK API.
+        """Delete a user from YouAuth API.
         :param user_id:
             User ID to be deleted.
         :return:

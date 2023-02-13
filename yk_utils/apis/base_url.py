@@ -3,7 +3,7 @@
 
 
 class BaseUrl:
-    """Manage YooniK API base URL."""
+    """Manage Youverse API base URL."""
     @classmethod
     def set(cls, base_url: str):
         """

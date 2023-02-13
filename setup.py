@@ -5,12 +5,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_utils",
-    version="1.3.2",
-    description="YooniK utils package for python.",
+    version="1.3.3",
+    description="Youverse utils package for python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="YooniK",
-    author_email="tech@yoonik.me",
+    author="Youverse",
+    author_email="tech@youverse.id",
     url="https://github.com/dev-yoonik/yk-utils-python",
     license='MIT',
     packages=[
