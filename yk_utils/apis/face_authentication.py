@@ -44,9 +44,13 @@ class FaceAuthentication:
         elif "multiple_faces" in message:
             message = "The image has more than one person."
         elif "brightness_failed" in message:
-            message = "Please avoid glare or extreme light conditions."
+            message = "Avoid glare or extreme light conditions."
         elif "light_uniformity_failed" in message:
-            message = "Please avoid having parts of your face shadowed."
+            message = "Avoid having parts of your face shadowed."
+        elif "face_too_far" in message:
+            message = "Move a little closer to the camera."
+        elif "face_too_close" in message:
+            message = "Move a little further from the camera."
         elif "quality_failed" in message:
             message = "The provided image does not have enough quality."
         elif "mobile_app_no_response" in message:

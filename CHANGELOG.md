@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+## v1.3.5
+
+### Added
+
+- Additional error messages in face authentication class.
+
 ## v1.3.4
 
 ### Changed
