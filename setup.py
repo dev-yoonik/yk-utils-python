@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_utils",
-    version="1.3.5",
+    version="1.3.6",
     description="Youverse utils package for python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
