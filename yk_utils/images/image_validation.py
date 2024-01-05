@@ -8,4 +8,4 @@ def allowed_base64_image(image: str) -> bool:
     """
     if not image.startswith('data:image/'):
         return False
-    return image[11:14] in {'png', 'jpg', 'jpeg', 'gif'}
+    return image[11:14] in {'png', 'jpg', 'gif'} or image[11:15] == 'jpeg'
